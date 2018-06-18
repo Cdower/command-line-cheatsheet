@@ -1,0 +1,22 @@
+#bash
+alias ssh='ssh -A -4 -l cdower'
+alias ls="ls -FG"
+#k8s
+
+alias k-switch-to-local='kubectl config use-context docker-for-desktop'
+
+alias k-namespace-net='kubectl config set-context $(kubectl config current-context) --namespace=net
+alias k-namespace-home='kubectl config set-context $(kubectl config current-context) --namespace=home
+
+alias k-nodes='kubectl get nodes'
+alias k-nodes-long='kubectl get nodes --show-labels'
+alias k-nodes-os='kubectl get nodes -o wide --label-columns=nodetype'
+
+alias kgp='kubectl get pods -o wide --all-namespaces'
+alias k-pods='kubectl get pods'
+alias k-pods-long='kubectl get pods -o wide'
+alias k-pods-vhost='kubectl get pods --label-columns=vhost'
+
+alias k-deployments='kubectl get deployments --label-columns=vhost,category,version'
+alias k-replicaset='kubectl get replicaset -o wide'
+alias k-service='kubectl get service -o wide'
